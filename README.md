@@ -82,7 +82,7 @@ YOLO-SNet consists of three major components:
    The detection head predicts object classes and bounding boxes from multi-scale features, enabling robust detection of small and flat objects in UAV imagery.
 
 <p align="center">
-  <img src="images/Figure-1.png" width="900">
+  <img src="Figure-1.png" width="900">
 </p>
 
 ---
