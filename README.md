@@ -7,6 +7,18 @@
 
 Official repository for **YOLO-SNet: Detection of Distant Smaller Entities from Aerial Surveillance Images Consisting Heterogeneous Objects**.
 
+**Current repository:**
+
+```text
+https://github.com/Ronyshaha/SNet
+```
+
+**Forked from:**
+
+```text
+https://github.com/dhuvisionlab/YOLO-SNet
+```
+
 **Authors:**
 Rony Shaha, Kaushik Sarker*, Md Mahibul Hasan, Sayed Jobaer, Foysal Ahmed, MD Ahasan Habib Tushar, and Sumonta Ghosh
 
@@ -22,12 +34,20 @@ The proposed YOLO-SNet integrates a Ghost Backbone, C3k2_gConv module, C3k2_GDC 
 
 This repository provides the source code, model configuration files, training scripts, evaluation scripts, inference scripts, pretrained weights, and representative experimental results used in the YOLO-SNet manuscript.
 
+This repository is maintained as the working GitHub repository for the YOLO-SNet paper and is forked from the original project template hosted under dhuvisionlab.
+
 The repository supports reproducibility of the main experimental results reported on:
 
 * **SOD-Dataset**
 * **VisDrone2019**
 
 Repository:
+
+```text
+https://github.com/Ronyshaha/SNet
+```
+
+Original fork source:
 
 ```text
 https://github.com/dhuvisionlab/YOLO-SNet
@@ -44,7 +64,7 @@ https://github.com/dhuvisionlab/YOLO-SNet
 * WIoUv3 loss for improved bounding-box regression.
 * Evaluated on the custom SOD-Dataset and the public VisDrone2019 dataset.
 * Designed for real-time aerial surveillance, small-object detection, and resource-constrained applications.
-* Demonstrates strong trade-off among accuracy, FPS, parameters, FLOPs, and model size.
+* Demonstrates a strong trade-off among accuracy, FPS, parameters, FLOPs, and model size.
 
 ---
 
@@ -62,32 +82,8 @@ YOLO-SNet consists of three major components:
    The detection head predicts object classes and bounding boxes from multi-scale features, enabling robust detection of small and flat objects in UAV imagery.
 
 <p align="center">
-  <img src="images/Figure-1_architecture.png" width="900">
+  <img src="images/Figure-1.png" width="900">
 </p>
-
----
-
-## Proposed Modules
-
-### Ghost Backbone
-
-The Ghost Backbone uses GhostConv-based operations to generate efficient feature maps with reduced computational cost. This helps YOLO-SNet maintain strong detection performance while reducing parameter count and model size.
-
-### C3k2_gConv Module
-
-The C3k2_gConv module improves feature extraction efficiency by replacing conventional convolution operations with GhostConv-based lightweight operations.
-
-### C3k2_GDC Module
-
-The proposed C3k2_GDC module combines GhostConv with dynamic convolution. It dynamically aggregates multiple Ghost convolution kernels using attention weights, allowing the model to adapt to different aerial scenes and object scales.
-
-<p align="center">
-  <img src="images/Figure-3_ghost_dynamic_conv.png" width="850">
-</p>
-
-### WIoUv3 Loss
-
-WIoUv3 is adopted for bounding-box regression to improve localization performance, especially for small and flat objects in complex UAV-assisted aerial images.
 
 ---
 
@@ -109,25 +105,12 @@ WIoUv3 is adopted for bounding-box regression to improve localization performanc
 
 ---
 
-## Ablation Study
-
-The ablation study evaluates the contribution of the major components used in YOLO-SNet, including GhostConv, C3k2_gConv, and C3k2_GDC.
-
-| Version      | GhostConv | C3k2_gConv | C3k2_GDC | Mean mAP | Params (M) |
-| ------------ | --------- | ---------- | -------- | -------: | ---------: |
-| V1           | ✓         | ✓          | -        |     50.7 |       8.04 |
-| V2           | ✓         | -          | ✓        |     48.2 |       8.00 |
-| V3           | -         | ✓          | ✓        |     48.5 |       7.09 |
-| V4 YOLO-SNet | ✓         | ✓          | ✓        |     53.5 |       7.00 |
-
----
-
 ## Qualitative Results
 
 The following visual comparison demonstrates YOLO-SNet and YOLOv11s under different lighting conditions, including morning, noon, evening, and night scenes. YOLO-SNet shows stronger detection capability for small and flat objects in complex UAV-assisted aerial scenes.
 
 <p align="center">
-  <img src="images/Figure-8_sod_comparison.png" width="950">
+  <img src="images/Figure-7.png" width="950">
 </p>
 
 ---
@@ -137,17 +120,17 @@ The following visual comparison demonstrates YOLO-SNet and YOLOv11s under differ
 The following curves compare mAP@50, mAP@50-95, precision, and recall across 300 training epochs. YOLO-SNet shows strong convergence and competitive performance compared with other YOLO variants.
 
 <p align="center">
-  <img src="images/Figure-11_training_curves.png" width="950">
+  <img src="images/Figure-10.png" width="950">
 </p>
 
 ---
 
 ## Model Efficiency Analysis
 
-YOLO-SNet is designed to provide a strong trade-off between detection accuracy and computational efficiency. The following figure compares latency, accuracy, throughput, and efficiency gain between YOLO-SNet and YOLOv11 variants.
+YOLO-SNet is designed to provide a strong trade-off between detection accuracy and computational efficiency. The following figure compares inference time, parameters, latency, accuracy, throughput, and efficiency gain between YOLO-SNet, YOLOv11, and other variants.
 
 <p align="center">
-  <img src="images/Figure-7_efficiency.png" width="950">
+  <img src="images/Figure-11.png" width="950">
 </p>
 
 ### Latency vs Parameters
@@ -155,7 +138,7 @@ YOLO-SNet is designed to provide a strong trade-off between detection accuracy a
 The following figure shows the speed-size trade-off, where YOLO-SNet achieves low inference time and reduced parameter count.
 
 <p align="center">
-  <img src="images/Figure-12_latency_params.png" width="850">
+  <img src="images/Figure-12.png" width="850">
 </p>
 
 ---
@@ -165,8 +148,8 @@ The following figure shows the speed-size trade-off, where YOLO-SNet achieves lo
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/dhuvisionlab/YOLO-SNet.git
-cd YOLO-SNet
+git clone https://github.com/Ronyshaha/SNet.git
+cd SNet
 ```
 
 ### 2. Create environment
@@ -423,7 +406,7 @@ python tools/profile_model.py \
 
 | Model     | Dataset      | Weight                            |
 | --------- | ------------ | --------------------------------- |
-| YOLO-SNet | SOD-Dataset  | `weights/best.pt`                 |
+| YOLO-SNet | SOD-Dataset  | Available upon request or release  |
 | YOLO-SNet | VisDrone2019 | Available upon request or release |
 
 If pretrained weights are larger than the GitHub upload limit, they can be provided through GitHub Releases, Google Drive, or another external storage link.
@@ -452,7 +435,7 @@ results/
 ## Repository Structure
 
 ```text
-YOLO-SNet/
+SNet/
 ├── assets/
 │   └── demo.jpg
 │
@@ -470,12 +453,12 @@ YOLO-SNet/
 │   └── sample_data/
 │
 ├── images/
-│   ├── Figure-1_architecture.png
-│   ├── Figure-3_ghost_dynamic_conv.png
-│   ├── Figure-7_efficiency.png
-│   ├── Figure-8_sod_comparison.png
-│   ├── Figure-11_training_curves.png
-│   └── Figure-12_latency_params.png
+│   ├── Figure-1.png
+│   ├── Figure-3.png
+│   ├── Figure-7.png
+│   ├── Figure-10.png
+│   ├── Figure-11.png
+│   └── Figure-12.png
 │
 ├── results/
 │   ├── sod_dataset/
@@ -520,7 +503,7 @@ If this work is useful for your research, please cite our paper:
 @article{shaha2025yolosnet,
   title   = {YOLO-SNet: Detection of Distant Smaller Entities from Aerial Surveillance Images Consisting Heterogeneous Objects},
   author  = {Shaha, Rony and Sarker, Kaushik and Hasan, Md Mahibul and Jobaer, Sayed and Ahmed, Foysal and Habib Tushar, MD Ahasan and Ghosh, Sumonta},
-  journal = {------------},
+  journal = {---------},
   year    = {2025}
 }
 ```
@@ -529,7 +512,14 @@ If this work is useful for your research, please cite our paper:
 
 ## Acknowledgements
 
-We thank the researchers and contributors working on UAV-assisted aerial image analysis, small object detection, and lightweight YOLO-based object detection methods.
+We sincerely acknowledge **Dhuvision Lab** for sharing the dataset and supporting the development of this research work.
+
+We would also like to thank all authors and contributors of this paper for their valuable contributions, discussions, and support throughout the development of YOLO-SNet.
+
+This repository is forked from:
+
+```text
+https://github.com/dhuvisionlab/YOLO-SNet
 
 ---
 
@@ -546,5 +536,5 @@ For questions about the code, dataset access, or experimental results, please op
 Repository:
 
 ```text
-https://github.com/dhuvisionlab/YOLO-SNet
+https://github.com/Ronyshaha/SNet
 ```
