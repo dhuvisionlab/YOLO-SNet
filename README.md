@@ -12,9 +12,6 @@ Official repository for **YOLO-SNet: Detection of Distant Smaller Entities from 
 ```text
 https://github.com/Ronyshaha/SNet
 ```
-
-**Forked from:**
-
 ```text
 https://github.com/dhuvisionlab/YOLO-SNet
 ```
@@ -46,9 +43,6 @@ Repository:
 ```text
 https://github.com/Ronyshaha/SNet
 ```
-
-Original fork source:
-
 ```text
 https://github.com/dhuvisionlab/YOLO-SNet
 ```
@@ -516,12 +510,6 @@ We sincerely acknowledge **Dhuvision Lab** for sharing the dataset and supportin
 
 We would also like to thank all authors and contributors of this paper for their valuable contributions, discussions, and support throughout the development of YOLO-SNet.
 
-This repository is forked from:
-
-```text
-https://github.com/dhuvisionlab/YOLO-SNet
-
----
 
 ## License
 
@@ -536,5 +524,6 @@ For questions about the code, dataset access, or experimental results, please op
 Repository:
 
 ```text
+https://github.com/dhuvisionlab/YOLO-SNet
 https://github.com/Ronyshaha/SNet
 ```
